@@ -1,14 +1,19 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';
 import BottomMenu from './features/bottom-menu/BottomMenu';
 
 function App() {
   return (
     <div className="App">
-      <main>
-        Order Keep
-      </main>
+      <BrowserRouter>
+        <main>
+          <Routes>
+            
+          </Routes>
+        </main>
 
-      <BottomMenu></BottomMenu>
+        <BottomMenu></BottomMenu>
+      </BrowserRouter>
     </div>
   );
 }
