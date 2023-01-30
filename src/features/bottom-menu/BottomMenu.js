@@ -9,7 +9,7 @@ const BottomMenu = (props) => {
     <div className="BottomMenu">
       <div className="content">
         <Link to="/" className="btn-menu-option"><FontAwesomeIcon icon={faRocket} size="3x" /></Link>
-        <Link to="/" className="btn-menu-option"><FontAwesomeIcon icon={faUserCircle} size="3x" /></Link>
+        <Link to="/customers" className="btn-menu-option"><FontAwesomeIcon icon={faUserCircle} size="3x" /></Link>
         <Link to="/" className="btn-menu-option"><FontAwesomeIcon icon={faFileInvoice} size="3x" /></Link>
         <Link to="/" className="btn-menu-option"><FontAwesomeIcon icon={faCog} size="3x" /></Link>
       </div>

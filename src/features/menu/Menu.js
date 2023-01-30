@@ -18,7 +18,7 @@ const Menu = (props) => {
       <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/"><FontAwesomeIcon icon={faUserPlus} size="2x" /></Link>
       <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/"><FontAwesomeIcon icon={faFileCirclePlus} size="2x" /></Link>
       <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/"><FontAwesomeIcon icon={faSearchPlus} size="2x" /></Link>
-      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/"><FontAwesomeIcon icon={faUserCircle} size="2x" /></Link>
+      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/customers"><FontAwesomeIcon icon={faUserCircle} size="2x" /></Link>
       <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/"><FontAwesomeIcon icon={faFileInvoice} size="2x" /></Link>
       <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/"><FontAwesomeIcon icon={faCog} size="2x" /></Link>
     </div>
