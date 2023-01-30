@@ -1,0 +1,77 @@
+@import '../../variables.scss';
+
+.Menu {
+  flex: 1;
+  position: relative;
+
+  .option {
+    text-decoration: none;
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $bottom-menu-background-color;
+    color: $bottom-menu-text-color;
+    transition: all 1000ms;
+
+    &.positioned:nth-of-type(1) {
+      top: 25%;
+      left: 25%;
+    }
+
+    &.positioned:nth-of-type(2) {
+      top: 50%;
+      left: 20%;
+    }
+
+    &.positioned:nth-of-type(3) {
+      top: 75%;
+      left: 25%;
+    }
+
+    &.positioned:nth-of-type(4) {
+      top: 25%;
+      left: 75%;
+    }
+
+    &.positioned:nth-of-type(5) {
+      top: 50%;
+      left: 80%;
+    }
+
+    &.positioned:nth-of-type(6) {
+      top: 75%;
+      left: 75%;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .Menu {
+
+    .option {
+
+      &.positioned:nth-of-type(1), &.positioned:nth-of-type(3) {
+        left: calc(10% + (75px / 2));
+      }
+
+      &.positioned:nth-of-type(2) {
+        left: (75px / 2);
+      }
+
+      &.positioned:nth-of-type(5) {
+        left: calc(100% - (75px / 2));
+      }
+
+      &.positioned:nth-of-type(4), &.positioned:nth-of-type(6) {
+        left: calc(90% - (75px / 2));
+      }
+    }
+  }
+}
