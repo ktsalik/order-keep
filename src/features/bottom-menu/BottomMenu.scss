@@ -2,7 +2,24 @@
 
 .BottomMenu {
   width: 100%;
-  padding: 10px 0;
   background: $bottom-menu-background-color;
   color: $bottom-menu-text-color;
+
+  .content {
+    width: 100%;
+    max-width: 1180px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 20px 0;
+
+    .btn-menu-option {
+      outline: none;
+      border: none;
+      margin: 0 10px;
+      background-color: transparent;
+      color: $bottom-menu-text-color;
+      cursor: pointer;
+    }
+  }
 }
