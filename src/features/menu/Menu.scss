@@ -134,6 +134,20 @@
 
     .option {
 
+      &:nth-of-type(2) {
+
+        span {
+          left: calc(50% + 5px) !important;
+        }
+      }
+
+      &:nth-of-type(5) {
+
+        span {
+          left: calc(50% - 5px) !important;
+        }
+      }
+
       span {
         top: calc(100% + 5px);
         left: 50% !important;
