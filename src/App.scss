@@ -2,7 +2,7 @@
 
 .App {
   width: 100vw;
-  min-height: calc(100vh);
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,9 +10,9 @@
   color: $text-color;
 
   main {
-    flex: 1;
     width: calc(100% - 20px - 20px);
     max-width: calc(1180px - 20px - 20px);
+    height: calc(100% - 73px);
     display: flex;
     margin: 0 auto;
     padding: 20px;
