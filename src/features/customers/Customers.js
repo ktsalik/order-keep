@@ -4,7 +4,7 @@ const Customers = (props) => {
 
   return (
     <div className="Customers">
-      customers
+      Υπο κατασκευή
     </div>
   );
 }
