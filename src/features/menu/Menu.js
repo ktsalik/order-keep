@@ -15,12 +15,30 @@ const Menu = (props) => {
 
   return (
     <div className="Menu">
-      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/"><FontAwesomeIcon icon={faUserPlus} size="2x" /></Link>
-      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/"><FontAwesomeIcon icon={faFileCirclePlus} size="2x" /></Link>
-      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/"><FontAwesomeIcon icon={faSearchPlus} size="2x" /></Link>
-      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/customers"><FontAwesomeIcon icon={faUserCircle} size="2x" /></Link>
-      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/"><FontAwesomeIcon icon={faFileInvoice} size="2x" /></Link>
-      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/"><FontAwesomeIcon icon={faCog} size="2x" /></Link>
+      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/">
+        <FontAwesomeIcon icon={faUserPlus} size="2x" />
+        <span>New Customer</span>
+      </Link>
+      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/">
+        <FontAwesomeIcon icon={faFileCirclePlus} size="2x" />
+        <span>New Order</span>
+      </Link>
+      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/">
+        <FontAwesomeIcon icon={faSearchPlus} size="2x" />
+        <span>Search</span>
+      </Link>
+      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/customers">
+        <FontAwesomeIcon icon={faUserCircle} size="2x" />
+        <span>Customers</span>
+      </Link>
+      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/">
+        <FontAwesomeIcon icon={faFileInvoice} size="2x" />
+        <span>Orders</span>
+      </Link>
+      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/">
+        <FontAwesomeIcon icon={faCog} size="2x" />
+        <span>Settings</span>
+      </Link>
     </div>
   );
 }
