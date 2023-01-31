@@ -2,7 +2,7 @@ import { faCog, faFileCirclePlus, faFileInvoice, faSearchPlus, faUserCircle, faU
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Menu.scss';
 import { Link } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 const Menu = (props) => {
@@ -20,7 +20,7 @@ const Menu = (props) => {
 
   return (
     <div className="Menu">
-      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/">
+      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/new-customer">
         <FontAwesomeIcon icon={faUserPlus} size="2x" />
         <span>{t.menu.newCustomer}</span>
       </Link>
