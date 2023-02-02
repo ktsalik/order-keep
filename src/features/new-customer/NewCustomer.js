@@ -103,7 +103,7 @@ const NewCustomer = (props) => {
 
       {
         saved && <button
-          className="btn-new-customer"
+          className="btn-new-customer animate__animated animate__fadeIn"
           onClick={clearFields}
         >
           <FontAwesomeIcon icon={faPlus} size="lg" />
