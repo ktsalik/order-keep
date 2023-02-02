@@ -1,8 +1,11 @@
 @import '../../variables.scss';
 
 .Menu {
-  flex: 1;
   position: relative;
+  width: 100%;
+  max-width: 1180px;
+  height: 100%;
+  margin: 0 auto;
 
   .option {
     text-decoration: none;
@@ -111,19 +114,19 @@
     .option {
 
       &.positioned:nth-of-type(1), &.positioned:nth-of-type(3) {
-        left: calc(10% + (75px / 2));
+        left: calc(10% + 75px);
       }
 
       &.positioned:nth-of-type(2) {
-        left: (75px / 2);
+        left: 75px;
       }
 
       &.positioned:nth-of-type(5) {
-        left: calc(100% - (75px / 2));
+        left: calc(100% - 75px);
       }
 
       &.positioned:nth-of-type(4), &.positioned:nth-of-type(6) {
-        left: calc(90% - (75px / 2));
+        left: calc(90% - 75px);
       }
     }
   }

@@ -4,6 +4,7 @@ import BottomMenu from './features/bottom-menu/BottomMenu';
 import Customers from './features/customers/Customers';
 import Menu from './features/menu/Menu';
 import NewCustomer from './features/new-customer/NewCustomer';
+import 'animate.css';
 
 function App() {
   return (

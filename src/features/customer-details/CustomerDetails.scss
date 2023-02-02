@@ -1,0 +1,14 @@
+@import '../../variables.scss';
+
+.CustomerDetails {
+
+  .fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .Input {
+      margin: 5px 0;
+    }
+  }
+}

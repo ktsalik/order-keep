@@ -14,6 +14,25 @@ const i18nSlice = createSlice({
           orders: 'Orders',
           settings: 'Settings',
         },
+        customerDetails: {
+          placeholders: {
+            firstname: 'Firstname',
+            lastname: 'Lastname',
+            phone: 'Phone',
+            email: 'Email',
+            address: 'Address',
+            city: 'City',
+            zip: 'Zip',
+            vatNumber: 'Vat Number',
+            notes: 'Notes',
+          },
+        },
+        newCustomer: {
+          btnSaveText: 'Save',
+          btnSaveProcessingText: 'Please wait',
+          btnSaveCompletedText: 'Saved',
+          btnNewCustomer: 'New Customer',
+        },
       },
       el: {
         menu: {
@@ -23,6 +42,25 @@ const i18nSlice = createSlice({
           customers: 'Πελάτες',
           orders: 'Παραγγελίες',
           settings: 'Ρυθμίσεις',
+        },
+        customerDetails: {
+          placeholders: {
+            firstname: 'Όνομα',
+            lastname: 'Επώνυμο',
+            phone: 'Τηλέφωνο',
+            email: 'Email',
+            address: 'Διεύθυνση',
+            city: 'Πόλη',
+            zip: 'Τ.Κ.',
+            vatNumber: 'Α.Φ.Μ.',
+            notes: 'Σημειώσεις',
+          },
+        },
+        newCustomer: {
+          btnSaveText: 'Αποθήκευση',
+          btnSaveProcessingText: 'Παρακαλώ περιμένετε',
+          btnSaveCompletedText: 'Αποθηκεύτηκε',
+          btnNewCustomer: 'Νέος Πελάτης',
         },
       },
     },
