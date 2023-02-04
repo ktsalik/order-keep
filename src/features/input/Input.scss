@@ -4,13 +4,18 @@
   position: relative;
   width: 425px;
   max-width: 100%;
+  display: flex;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 
   input, textarea {
+    all: unset;
     outline: none;
-    width: calc(100% - 10px - 10px - 1px - 1px);
+    border: none;
+    width: calc(100% - 10px - 10px);
     padding: 15px 10px;
-    border: 1px solid $input-border-color;
     border-radius: 5px;
+    background-color: #FFFFFF;
     font-size: 16px;
   }
 
