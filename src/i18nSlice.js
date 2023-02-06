@@ -33,6 +33,12 @@ const i18nSlice = createSlice({
           btnSaveCompletedText: 'Saved',
           btnNewCustomer: 'New Customer',
         },
+        customersList: {
+          fullname: 'Fullname',
+          phone: 'Phone',
+          vatNumber: 'Vat Number',
+          city: 'City',
+        },
       },
       el: {
         menu: {
@@ -61,6 +67,12 @@ const i18nSlice = createSlice({
           btnSaveProcessingText: 'Παρακαλώ περιμένετε',
           btnSaveCompletedText: 'Αποθηκεύτηκε',
           btnNewCustomer: 'Νέος Πελάτης',
+        },
+        customersList: {
+          fullname: 'Ονοματεπώνυμο',
+          phone: 'Τηλέφωνο',
+          vatNumber: 'Α.Φ.Μ.',
+          city: 'Πόλη',
         },
       },
     },

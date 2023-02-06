@@ -4,11 +4,15 @@ import { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Customers.scss';
 import request from '../../request';
+import { useSelector } from 'react-redux';
 
 const Customers = (props) => {
   const [customers, setCustomers] = useState([]);
   const [isInternetConnectionOnline, setIsInternetConnectionOnline] = useState(true);
   const [offlineMessage, setOffilineMessage] = useState([]);
+
+  const i18n = useSelector((state) => state.i18n);
+  const t = i18n.translations[i18n.language];
 
   useEffect(() => {
     if (window.navigator.onLine === true) {
@@ -28,10 +32,10 @@ const Customers = (props) => {
           <thead>
             <tr>
               <th>ID</th>
-              <th>Όνοματεπώνυμο</th>
-              <th>Α.Φ.Μ.</th>
-              <th>Πόλη</th>
-              <th>Τηλέφωνο</th>
+              <th>{t.customersList.fullname}</th>
+              <th>{t.customersList.vatNumber}</th>
+              <th>{t.customersList.city}</th>
+              <th>{t.customersList.phone}</th>
             </tr>
           </thead>
 
