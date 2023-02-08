@@ -6,6 +6,7 @@ const i18nSlice = createSlice({
     language: 'el',
     translations: {
       en: {
+        loadingText: 'Loading',
         menu: {
           newCustomer: 'New Customer',
           newOrder: 'New Order',
@@ -24,6 +25,7 @@ const i18nSlice = createSlice({
             city: 'City',
             zip: 'Zip',
             vatNumber: 'Vat Number',
+            taxOffice: 'Tax Office',
             notes: 'Notes',
           },
         },
@@ -34,13 +36,21 @@ const i18nSlice = createSlice({
           btnNewCustomer: 'New Customer',
         },
         customersList: {
+          id: "ID",
           fullname: 'Fullname',
           phone: 'Phone',
           vatNumber: 'Vat Number',
           city: 'City',
         },
+        customerPage: {
+          btnSaveText: 'Update',
+          btnSaveProcessingText: 'Please wait',
+          btnSaveCompletedText: 'Updated',
+          customerId: 'Customer ID',
+        },
       },
       el: {
+        loadingText: 'Φόρτωση',
         menu: {
           newCustomer: 'Νέος Πελάτης',
           newOrder: 'Νέα Παραγγελία',
@@ -59,6 +69,7 @@ const i18nSlice = createSlice({
             city: 'Πόλη',
             zip: 'Τ.Κ.',
             vatNumber: 'Α.Φ.Μ.',
+            taxOffice: 'Δ.Ο.Υ.',
             notes: 'Σημειώσεις',
           },
         },
@@ -69,10 +80,17 @@ const i18nSlice = createSlice({
           btnNewCustomer: 'Νέος Πελάτης',
         },
         customersList: {
+          id: 'Κωδικός',
           fullname: 'Ονοματεπώνυμο',
           phone: 'Τηλέφωνο',
           vatNumber: 'Α.Φ.Μ.',
           city: 'Πόλη',
+        },
+        customerPage: {
+          btnSaveText: 'Αποθήκευση',
+          btnSaveProcessingText: 'Παρακαλώ περιμένετε',
+          btnSaveCompletedText: 'Οι αλλαγές αποθηκεύτηκαν',
+          customerId: 'Κωδικός Πελάτη',
         },
       },
     },

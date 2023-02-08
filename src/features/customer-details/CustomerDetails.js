@@ -12,6 +12,7 @@ const CustomerDetails = (props) => {
   const [city, setCity] = useState(props.data.city);
   const [zip, setZip] = useState(props.data.zip);
   const [vatNumber, setVatNumber] = useState(props.data.vatNumber);
+  const [taxOffice, setTaxOffice] = useState(props.data.taxOffice);
   const [notes, setNotes] = useState(props.data.notes);
 
   const i18n = useSelector((state) => state.i18n);
@@ -50,6 +51,10 @@ const CustomerDetails = (props) => {
       setVatNumber(props.data.vatNumber);
     }
 
+    if (props.data.taxOffice !== taxOffice) {
+      setTaxOffice(props.data.taxOffice);
+    }
+
     if (props.data.notes !== notes) {
       setNotes(props.data.notes);
     }
@@ -65,48 +70,93 @@ const CustomerDetails = (props) => {
       city,
       zip,
       vatNumber,
+      taxOffice,
       notes,
     });
-  }, [firstname, lastname, phone, email, address, city, zip, vatNumber, notes]);
+  }, [firstname, lastname, phone, email, address, city, zip, vatNumber, taxOffice, notes]);
 
   const onFirstnameChange = (e) => {
     setFirstname(e.target.value);
+
+    if (props.onInputChange) {
+      props.onInputChange(e);
+    }
   };
 
   const onLastnameChange = (e) => {
     setLastname(e.target.value);
+
+    if (props.onInputChange) {
+      props.onInputChange(e);
+    }
   };
 
   const onPhoneChange = (e) => {
     setPhone(e.target.value);
+
+    if (props.onInputChange) {
+      props.onInputChange(e);
+    }
   };
 
   const onEmailChange = (e) => {
     setEmail(e.target.value);
+
+    if (props.onInputChange) {
+      props.onInputChange(e);
+    }
   };
 
   const onAddressChange = (e) => {
     setAddress(e.target.value);
+
+    if (props.onInputChange) {
+      props.onInputChange(e);
+    }
   };
 
   const onCityChange = (e) => {
     setCity(e.target.value);
+
+    if (props.onInputChange) {
+      props.onInputChange(e);
+    }
   };
 
   const onZipChange = (e) => {
     setZip(e.target.value);
+
+    if (props.onInputChange) {
+      props.onInputChange(e);
+    }
   };
 
   const onVatNumberChange = (e) => {
     setVatNumber(e.target.value);
+
+    if (props.onInputChange) {
+      props.onInputChange(e);
+    }
+  };
+
+  const onTaxOfficeChange = (e) => {
+    setTaxOffice(e.target.value);
+
+    if (props.onInputChange) {
+      props.onInputChange(e);
+    }
   };
 
   const onNotesChange = (e) => {
     setNotes(e.target.value);
+
+    if (props.onInputChange) {
+      props.onInputChange(e);
+    }
   };
 
   return (
-    <div className="CustomerDetails">
+    <div className={`CustomerDetails ${props.className}`}>
       <div className="fields animate__animated animate__fadeIn">
         <Input value={firstname} onChange={onFirstnameChange} placeholder={t.customerDetails.placeholders.firstname} disabled={props.disable}></Input>
         <Input value={lastname} onChange={onLastnameChange} placeholder={t.customerDetails.placeholders.lastname} disabled={props.disable}></Input>
@@ -116,6 +166,7 @@ const CustomerDetails = (props) => {
         <Input value={city} onChange={onCityChange} placeholder={t.customerDetails.placeholders.city} disabled={props.disable}></Input>
         <Input value={zip} onChange={onZipChange} placeholder={t.customerDetails.placeholders.zip} disabled={props.disable}></Input>
         <Input value={vatNumber} onChange={onVatNumberChange} placeholder={t.customerDetails.placeholders.vatNumber} disabled={props.disable}></Input>
+        <Input value={taxOffice} onChange={onTaxOfficeChange} placeholder={t.customerDetails.placeholders.taxOffice} disabled={props.disable}></Input>
         <Input value={notes} onChange={onNotesChange} placeholder={t.customerDetails.placeholders.notes} type="textarea" disabled={props.disable}></Input>
       </div>
     </div>

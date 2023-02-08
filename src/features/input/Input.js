@@ -9,6 +9,8 @@ const Input = (props) => {
   useEffect(() => {
     if (props.value.trim().length === 0 && inputIsBlurred) {
       placeholderElRef.current.classList.remove('d-none');
+    } else {
+      placeholderElRef.current.classList.add('d-none');
     }
   }, [props.value]);
 

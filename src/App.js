@@ -5,6 +5,7 @@ import Customers from './features/customers/Customers';
 import Menu from './features/menu/Menu';
 import NewCustomer from './features/new-customer/NewCustomer';
 import 'animate.css';
+import Customer from './features/customer/Customer';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Menu />}></Route>
             <Route path="/customers" element={<Customers />}></Route>
             <Route path="/new-customer" element={<NewCustomer />}></Route>
+            <Route path="/customer/:id" element={<Customer />}></Route>
           </Routes>
         </main>
 

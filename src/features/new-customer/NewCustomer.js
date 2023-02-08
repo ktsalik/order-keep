@@ -16,6 +16,7 @@ const NewCustomer = (props) => {
     city: '',
     zip: '',
     vatNumber: '',
+    taxOffice: '',
     notes: '',
   });
   const [processing, setProcessing] = useState(false);
@@ -31,7 +32,7 @@ const NewCustomer = (props) => {
   };
 
   const save = () => {
-    if (!saved) {
+    if (!saved && !processing) {
       setProcessing(true);
 
       request.post(`new-customer`, customer).then((response) => {
@@ -40,6 +41,7 @@ const NewCustomer = (props) => {
         } else if (response.data.status === 'error') {
           alert(response.data.error);
         }
+        
         setProcessing(false);
       }).catch((err) => {
         alert(err);
@@ -59,6 +61,7 @@ const NewCustomer = (props) => {
       city: '',
       zip: '',
       vatNumber: '',
+      taxOffice: '',
       notes: '',
     });
     

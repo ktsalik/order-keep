@@ -1,23 +1,28 @@
-import { faCircleNotch, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCircleNotch, faIdBadge, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Fragment, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Customers.scss';
 import request from '../../request';
 import { useSelector } from 'react-redux';
+import Loading from '../loading/Loading';
 
 const Customers = (props) => {
   const [customers, setCustomers] = useState([]);
+  const [initialized, setInitialized] = useState(false);
   const [isInternetConnectionOnline, setIsInternetConnectionOnline] = useState(true);
   const [offlineMessage, setOffilineMessage] = useState([]);
 
   const i18n = useSelector((state) => state.i18n);
   const t = i18n.translations[i18n.language];
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (window.navigator.onLine === true) {
-      request.get(`get-customers`).then((response) => {
+      request.get(`customers`).then((response) => {
         setCustomers(response.data);
+        setInitialized(true);
       });
     } else {
       setIsInternetConnectionOnline(false);
@@ -25,13 +30,21 @@ const Customers = (props) => {
     }
   }, []);
 
+  const viewCustomer = (id) => {
+    navigate(`/customer/${id}`);
+  };
+
   return (
     <div className="Customers">
-      <div className={`list ${customers.length > 0 ? '' : 'd-none'}`}>
+      {
+        isInternetConnectionOnline && !initialized && <Loading></Loading>
+      }
+
+      <div className={`list ${isInternetConnectionOnline && !initialized ? 'd-none' : ''}`}>
         <table>
           <thead>
             <tr>
-              <th>ID</th>
+              <th>{t.customersList.id}</th>
               <th>{t.customersList.fullname}</th>
               <th>{t.customersList.vatNumber}</th>
               <th>{t.customersList.city}</th>
@@ -43,8 +56,8 @@ const Customers = (props) => {
             {
               customers.map((customer, i) => {
                 return (
-                  <tr key={i}>
-                    <td>#{customer.id}</td>
+                  <tr key={i} onClick={viewCustomer.bind(this, customer.id)}>
+                    <td><FontAwesomeIcon icon={faIdBadge} size="lg" />&nbsp;{customer.id}</td>
                     <td>{customer.firstname} {customer.lastname}</td>
                     <td>{customer['vat-number']}</td>
                     <td>{customer.city}</td>
@@ -61,15 +74,8 @@ const Customers = (props) => {
         !isInternetConnectionOnline && offlineMessage
       }
 
-      {
-        !customers.length && isInternetConnectionOnline && <div className="loading-message">
-          <FontAwesomeIcon icon={faCircleNotch} spin size="2x" />
-          <span>Φόρτωση πελατών</span>
-        </div>
-      }
-
       <Link className="btn-new-customer" to="/new-customer">
-        <FontAwesomeIcon icon={faPlus} size="lg" />
+        <FontAwesomeIcon icon={faPlus} size="2x" />
       </Link>
     </div>
   );
