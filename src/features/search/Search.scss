@@ -1,0 +1,75 @@
+@import '../../variables.scss';
+
+.Search {
+
+  .search-bar {
+    margin-top: 50px;
+
+    .input {
+      position: relative;
+      width: 425px;
+      max-width: calc(100% - 20px - 20px);
+      margin: 0 auto;
+
+      &.has-suggestions {
+
+        input {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+
+      .icon {
+        position: absolute;
+        top: 13px;
+        left: 10px;
+      }
+
+      input {
+        all: none;
+        outline: none;
+        border: none;
+        width: calc(100% - 15px - 38px);
+        padding: 10px 15px;
+        padding-left: 38px;
+        border-radius: 27px;
+        background-color: $input-background-color;
+        font-size: 16px;
+        box-shadow: $input-box-shadow;
+      }
+
+      .placeholder {
+        position: absolute;
+        top: 13px;
+        left: 38px;
+        color: $placeholder-text-color;
+      }
+
+      .results {
+        position: absolute;
+        width: calc(100% - 15px - 38px);
+        max-height: 350px;
+        overflow-y: auto;
+        top: 100%;
+        left: 0;
+        padding: 10px 15px;
+        padding-left: 38px;
+        border-bottom-left-radius: 27px;
+        border-bottom-right-radius: 27px;
+        background-color: $input-background-color;
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+      
+        & > * {
+          display: flex;
+          flex-direction: column;
+          padding: 10px 0;
+          cursor: pointer;
+
+          span:nth-of-type(2) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

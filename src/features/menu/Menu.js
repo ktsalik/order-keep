@@ -28,7 +28,7 @@ const Menu = (props) => {
         <FontAwesomeIcon icon={faFileCirclePlus} size="2x" />
         <span>{t.menu.newOrder}</span>
       </Link>
-      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/">
+      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/search">
         <FontAwesomeIcon icon={faSearchPlus} size="2x" />
         <span>{t.menu.search}</span>
       </Link>
