@@ -10,8 +10,8 @@ const BottomMenu = (props) => {
       <div className="content">
         <Link to="/" className="btn-menu-option"><FontAwesomeIcon icon={faRocket} size="2x" /></Link>
         <Link to="/customers" className="btn-menu-option"><FontAwesomeIcon icon={faUserCircle} size="2x" /></Link>
-        <Link to="/" className="btn-menu-option"><FontAwesomeIcon icon={faFileInvoice} size="2x" /></Link>
-        <Link to="/" className="btn-menu-option"><FontAwesomeIcon icon={faCog} size="2x" /></Link>
+        <Link to="/under-construction" className="btn-menu-option"><FontAwesomeIcon icon={faFileInvoice} size="2x" /></Link>
+        <Link to="/under-construction" className="btn-menu-option"><FontAwesomeIcon icon={faCog} size="2x" /></Link>
       </div>
     </div>
   );

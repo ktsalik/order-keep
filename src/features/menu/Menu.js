@@ -24,7 +24,7 @@ const Menu = (props) => {
         <FontAwesomeIcon icon={faUserPlus} size="2x" />
         <span>{t.menu.newCustomer}</span>
       </Link>
-      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/">
+      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/under-construction">
         <FontAwesomeIcon icon={faFileCirclePlus} size="2x" />
         <span>{t.menu.newOrder}</span>
       </Link>
@@ -36,11 +36,11 @@ const Menu = (props) => {
         <FontAwesomeIcon icon={faUserCircle} size="2x" />
         <span>{t.menu.customers}</span>
       </Link>
-      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/">
+      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/under-construction">
         <FontAwesomeIcon icon={faFileInvoice} size="2x" />
         <span>{t.menu.orders}</span>
       </Link>
-      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/">
+      <Link className={`option ${positionOptions ? 'positioned' : ''}`} to="/under-construction">
         <FontAwesomeIcon icon={faCog} size="2x" />
         <span>{t.menu.settings}</span>
       </Link>

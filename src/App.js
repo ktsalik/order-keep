@@ -7,11 +7,12 @@ import NewCustomer from './features/new-customer/NewCustomer';
 import 'animate.css';
 import Customer from './features/customer/Customer';
 import Search from './features/search/Search';
+import UnderConstruction from './features/under-construction/UnderConstruction';
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter basename="/backoffice">
+      <BrowserRouter basename="/customers-manager">
         <main>
           <Routes>
             <Route path="/" element={<Menu />}></Route>
@@ -19,6 +20,7 @@ function App() {
             <Route path="/new-customer" element={<NewCustomer />}></Route>
             <Route path="/customer/:id" element={<Customer />}></Route>
             <Route path="/search" element={<Search />}></Route>
+            <Route path="/under-construction" element={<UnderConstruction />}></Route>
           </Routes>
         </main>
 

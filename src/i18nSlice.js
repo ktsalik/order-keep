@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const i18nSlice = createSlice({
   name: 'i18n',
   initialState: {
-    language: 'el',
+    language: 'en',
     translations: {
       en: {
         loadingText: 'Loading',

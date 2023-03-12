@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const request = axios.create({
-  baseURL: 'https://arxagelwn.gr/backoffice/',
+  baseURL: 'https://tsalikidis.dev/customers-manager/',
 });
 
 export default request;

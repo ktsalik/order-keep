@@ -87,7 +87,7 @@ const Search = (props) => {
             {
               quickSearchResults.map((result, i) => {
                 const attributeIndexOnName = result.name.indexOf(result.attribute);
-                
+
                 let name = result.name;
                 let attribute = result.attribute;
                 if (attributeIndexOnName > -1) {
@@ -97,11 +97,11 @@ const Search = (props) => {
                   name += '</b>';
                   name += result.name.slice(attributeIndexOnName + result.attribute.length);
                 } else {
-                  attribute = result.attribute.substr(0, result.position);
+                  attribute = result.attribute.toString().substr(0, result.position);
                   attribute += '<b>';
-                  attribute += result.attribute.substr(result.position, value.length);
+                  attribute += result.attribute.toString().substr(result.position, value.length);
                   attribute += '</b>';
-                  attribute += result.attribute.substr(result.position + value.length);
+                  attribute += result.attribute.toString().substr(result.position + value.length);
                 }
 
                 return (
