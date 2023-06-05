@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const request = axios.create({
-  baseURL: 'https://tsalikidis.dev/customers-manager/',
+  baseURL: 'http://localhost/customers-manager/',
 });
 
 export default request;

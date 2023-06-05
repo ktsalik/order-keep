@@ -7,7 +7,7 @@ const Input = (props) => {
   const placeholderElRef = useRef(null);
 
   useEffect(() => {
-    if (props.value.trim().length === 0 && inputIsBlurred) {
+    if (props.value.toString().trim().length === 0 && inputIsBlurred) {
       placeholderElRef.current.classList.remove('d-none');
     } else {
       placeholderElRef.current.classList.add('d-none');
@@ -24,7 +24,7 @@ const Input = (props) => {
   };
 
   const onInputBlur = () => {
-    if (props.value.trim().length === 0) {
+    if (props.value.toString().trim().length === 0) {
       placeholderElRef.current.classList.remove('d-none');
     }
     

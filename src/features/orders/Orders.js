@@ -1,14 +1,14 @@
-import { faCircleNotch, faIdBadge, faPlus } from '@fortawesome/free-solid-svg-icons';
+import './Orders.scss';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Customers.scss';
 import request from '../../request';
 import { useSelector } from 'react-redux';
 import Loading from '../loading/Loading';
 
-const Customers = (props) => {
-  const [customers, setCustomers] = useState([]);
+const Orders = (props) => {
+  const [orders, setOrders] = useState([]);
   const [initialized, setInitialized] = useState(false);
   const [isInternetConnectionOnline, setIsInternetConnectionOnline] = useState(true);
   const [offlineMessage, setOffilineMessage] = useState([]);
@@ -20,8 +20,8 @@ const Customers = (props) => {
 
   useEffect(() => {
     if (window.navigator.onLine === true) {
-      request.get(`customers`).then((response) => {
-        setCustomers(response.data);
+      request.get(`orders`).then((response) => {
+        setOrders(response.data);
         setInitialized(true);
       });
     } else {
@@ -30,12 +30,12 @@ const Customers = (props) => {
     }
   }, []);
 
-  const viewCustomer = (id) => {
-    navigate(`/customer/${id}`);
+  const viewOrder = (id) => {
+    navigate(`/order/${id}`);
   };
 
   return (
-    <div className="Customers">
+    <div className="Orders">
       {
         isInternetConnectionOnline && !initialized && <Loading></Loading>
       }
@@ -44,24 +44,22 @@ const Customers = (props) => {
         <table>
           <thead>
             <tr>
-              <th>{t.customersList.id}</th>
-              <th>{t.customersList.fullname}</th>
-              <th>{t.customersList.vatNumber}</th>
-              <th>{t.customersList.city}</th>
-              <th>{t.customersList.phone}</th>
+              <th>{t.orderList.fullname}</th>
+              <th>{t.orderList.phone}</th>
+              <th>{t.orderList.productCount}</th>
+              <th>{t.orderList.total}</th>
             </tr>
           </thead>
 
           <tbody>
             {
-              customers.map((customer, i) => {
+              orders.map((order, i) => {
                 return (
-                  <tr key={i} onClick={viewCustomer.bind(this, customer.id)}>
-                    <td><FontAwesomeIcon icon={faIdBadge} size="lg" />&nbsp;{customer.id}</td>
-                    <td>{customer.firstname} {customer.lastname}</td>
-                    <td>{customer['vat-number']}</td>
-                    <td>{customer.city}</td>
-                    <td>{customer.phone}</td>
+                  <tr key={i} onClick={viewOrder.bind(this, order.id)}>
+                    <td>{order.customer.firstname} {order.customer.lastname}</td>
+                    <td>{order.customer.phone}</td>
+                    <td>{order.productCount}</td>
+                    <td>${order.total.toFixed(2)}</td>
                   </tr>
                 )
               })
@@ -74,11 +72,11 @@ const Customers = (props) => {
         !isInternetConnectionOnline && offlineMessage
       }
 
-      <Link className="btn-new-customer" to="/new-customer">
+      <Link className="btn-new-order" to="/new-order">
         <FontAwesomeIcon icon={faPlus} size="2x" />
       </Link>
     </div>
   );
 }
 
-export default Customers;
+export default Orders;

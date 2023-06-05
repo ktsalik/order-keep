@@ -48,6 +48,23 @@ const i18nSlice = createSlice({
           btnSaveCompletedText: 'Updated',
           customerId: 'Customer ID',
         },
+        newOrder: {
+          btnSaveText: 'Save',
+          btnSaveProcessingText: 'Please wait',
+          btnSaveCompletedText: 'Saved',
+          btnNewOrder: 'New Order',
+        },
+        orderList: {
+          fullname: 'Fullname',
+          phone: 'Phone',
+          productCount: 'Products',
+          total: 'Total',
+        },
+        orderPage: {
+          btnSaveText: 'Update',
+          btnSaveProcessingText: 'Please wait',
+          btnSaveCompletedText: 'Updated',
+        },
       },
       el: {
         loadingText: 'Φόρτωση',
@@ -91,6 +108,23 @@ const i18nSlice = createSlice({
           btnSaveProcessingText: 'Παρακαλώ περιμένετε',
           btnSaveCompletedText: 'Οι αλλαγές αποθηκεύτηκαν',
           customerId: 'Κωδικός Πελάτη',
+        },
+        newOrder: {
+          btnSaveText: 'Αποθήκευση',
+          btnSaveProcessingText: 'Παρακαλώ περιμένετε',
+          btnSaveCompletedText: 'Οι αλλαγές αποθηκεύτηκαν',
+          btnNewOrder: 'Νέα Παραγγελία',
+        },
+        orderList: {
+          fullname: 'Όνομα',
+          phone: 'Τηλέφωνο',
+          productCount: 'Προϊόντα',
+          total: 'Σύνολο',
+        },
+        orderPage: {
+          btnSaveText: 'Αποθήκευση',
+          btnSaveProcessingText: 'Παρακαλώ περιμένετε',
+          btnSaveCompletedText: 'Οι αλλαγές αποθηκεύτηκαν',
         },
       },
     },
